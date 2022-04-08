@@ -2,7 +2,9 @@ const express = require('express');
 const mongodb = require('mongodb');
 const dotEnv = require("dotenv")
 const router = express.Router();
-dotEnv.config();
+if(process.env.NODE_ENV !== 'production'){
+  dotEnv.config();
+}
 
 //Get Posts
 
